@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
+10.times do
+  tag = Tag.new
+  tag.name = Faker::Color.color_name
+  tag.save
+end
+
+tags = Tag.all
+tag_count = tags.count
+
 board = Board.new
 board.title = "Books to read"
 board.save
@@ -23,6 +32,19 @@ board.save
     card.title = Faker::Book.title
     card.description = "by #{Faker::Book.author}, from #{Faker::Book.publisher}"
     card.save
+
+    note = Note.new
+    note.body = Faker::Hacker.say_something_smart
+    note.card_id = card.id
+    note.save
+
+    random_tags = tags.sample(rand(0..tag_count))
+    random_tags.each do |tag|
+      tagging = Tagging.new
+      tagging.card_id = card.id
+      tagging.tag_id = tag.id
+      tagging.save
+    end
   end
 end
 
@@ -43,5 +65,18 @@ board.save
     card.title = Faker::Company.buzzword
     card.description = Faker::Company.catch_phrase
     card.save
+
+    note = Note.new
+    note.body = Faker::Hacker.say_something_smart
+    note.card_id = card.id
+    note.save
+
+    random_tags = tags.sample(rand(0..tag_count))
+    random_tags.each do |tag|
+      tagging = Tagging.new
+      tagging.card_id = card.id
+      tagging.tag_id = tag.id
+      tagging.save
+    end
   end
 end
