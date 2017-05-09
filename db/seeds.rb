@@ -18,6 +18,7 @@ tag_count = tags.count
 
 board = Board.new
 board.title = "Books to read"
+board.description = Faker::Book.publisher
 board.save
 
 7.times do
@@ -51,6 +52,7 @@ end
 
 board = Board.new
 board.title = "Great companies"
+board.description = Faker::Company.profession
 board.save
 
 7.times do
