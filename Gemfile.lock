@@ -28,6 +28,12 @@ GIT
       responders
       warden (~> 1.2.3)
 
+GIT
+  remote: https://github.com/raghubetina/starter_generators.git
+  revision: 48fa7a4fbe4eb90ecfe05a133a7d7550167308f8
+  specs:
+    starter_generators (0.9.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -315,6 +321,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0)
   sqlite3
+  starter_generators!
   tzinfo-data
   uglifier (>= 1.3.0)
   wdm
