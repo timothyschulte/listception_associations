@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get "/", :controller => "boards", :action => "index"
+
   # Routes for the Tagging resource:
   # CREATE
   get "/taggings/new", :controller => "taggings", :action => "new"
