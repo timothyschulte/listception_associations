@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
     Tags
-    <a href="/tags/new" class="btn btn-lg btn-success">New Tag</a>
+    <a href="/tags/new" class="btn btn-lg btn-default">New Tag</a>
   </h1>
 </div>
 
@@ -17,9 +17,9 @@
       <tr>
         <td><%= tag.name %></td>
         <td>
-          <a href="/tags/<%= tag.id %>" class="btn btn-primary">Show</a>
-          <a href="/tags/<%= tag.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_tag/<%= tag.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/tags/<%= tag.id %>" class="btn btn-default">Show</a>
+          <a href="/tags/<%= tag.id %>/edit" class="btn btn-default">Edit</a>
+          <a href="/delete_tag/<%= tag.id %>" class="btn btn-default" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>
