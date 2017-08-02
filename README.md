@@ -8,6 +8,7 @@ In this project, you will build a simple clone of [Trello](https://trello.com/).
 
 ## Setup
 
+ 1. Set up [a Cloud9 workspace as usual](https://guides.firstdraft.com/getting-started-with-cloud-9.html).
  1. `bin/setup`
  1. Run project
  1. I've already generated starter resources for you, and you'll find some dummy data already exists.
