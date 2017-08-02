@@ -1,44 +1,5 @@
 # Listception Associations
 
-## Windows bcrypt error
-
-Note: Windows users, at some point you may run into an error with the `bcrypt` gem when you try to `rails db:seed` or sign in with the admin user. In order to resolve,
-
- 1. Shut down your `rails server` if you have one running, and/or
- 1. Launch Command Prompt with Ruby on Rails, and navigate to your project folder.
- 1. At the command line, run:
-
-    ```ruby
-    gem uninstall bcrypt
-    ```
-
-    If you're asked "Continue with Uninstall?", answer "y".
-
- 1. At the command line, run:
-
-    ```ruby
-    gem uninstall bcrypt-ruby
-    ```
-
-    If you're asked "Continue with Uninstall?", answer "y".
-
- 1. At the command line, run:
-
-    ```ruby
-    gem install bcrypt --platform=ruby
-    ```
-
-    If you're asked "Continue with Uninstall?", answer "y".
-
- 1. In Atom, add the following to the `/Gemfile`:
-
-    ```ruby
-    gem 'bcrypt', platforms: :ruby
-    ```
-
- 1. At the command line, run: `bundle install`
- 1. (Re)start your `rails server`, and you should be good to go!
-
 ## Associations practice
 
 In this project, you will build a simple clone of [Trello](https://trello.com/).
@@ -47,7 +8,7 @@ In this project, you will build a simple clone of [Trello](https://trello.com/).
 
 ## Setup
 
- 1. `bundle`
+ 1. `bin/setup`
  1. `rails db:migrate`
  1. `rails db:seed`
 

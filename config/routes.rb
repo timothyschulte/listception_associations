@@ -103,7 +103,9 @@ Rails.application.routes.draw do
   get "/delete_board/:id", :controller => "boards", :action => "destroy"
   #------------------------------
 
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  mount WebGit::Engine, at: "/rails/git"
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
