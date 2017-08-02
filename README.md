@@ -14,4 +14,5 @@ In this project, you will build a simple clone of [Trello](https://trello.com/).
  1. I've already generated starter resources for you, and you'll find some dummy data already exists.
  1. Your job is to add association helper methods between boards, lists, cards, and tags as needed; then make your app match the target.
  1. The key page to work on improving is `boards#show`. Here I can see a board's lists, the cards on each list, add a new list, and add a card to each list.
+ 1. There are no tests/CI for this project. Just make your app match the target, and ask lots of questions — relating resources together and making them show up on each other's pages is most of what you'll have to do on your project!
  1. Good luck!
