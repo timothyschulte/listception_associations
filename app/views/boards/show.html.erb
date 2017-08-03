@@ -2,14 +2,62 @@
   <h3>Board #<%= @board.id %></h3>
 </div>
 
+
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Title</dt>
-      <dd><%= @board.title %></dd>
+    <h1>Create new list</h1>
+    <form action="/create_list" method="post">
 
-      <dt>Description</dt>
-      <dd><%= @board.description %></dd>
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="list" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @list %>">
+      </div>
+      <button class="btn btn-success">
+        Create List
+      </button>
+      
+    </form>
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      
+      <dd><% @board.lists.each do |list| %></dd>
+     
+        <dt>List Title</dt>
+        <dd><%= list.title %></dd>
+      
+          <dd><% list.cards.each do |card| %></dd>
+     
+            <dt>Card Name</dt>
+            <dd><%= card.title %></dd>
+            
+            <dt>Card Description</dt>
+            <dd><%= card.description %></dd>
+            
+            <dt>Tags</dt>
+            <dd><% card.tags.each do |tag| %></dd>
+            <dd><%= tag.name %></dd>
+            <% end %>
+            
+            <dt>Notes</dt>
+            <dd><% card.notes.each do |note| %></dd>
+            <dd><%= note.body %></dd>
+            <% end %>
+        <% end %>
+      <% end %>
+
 
     </dl>
 

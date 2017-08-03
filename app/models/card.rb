@@ -12,4 +12,11 @@
 #
 
 class Card < ApplicationRecord
+    
+belongs_to :list, :class_name => "List", :foreign_key => "list_id"
+has_many :notes
+has_many :taggings
+has_many :tags, through: :taggings
+
+
 end
