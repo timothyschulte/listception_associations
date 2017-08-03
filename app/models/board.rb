@@ -10,4 +10,8 @@
 #
 
 class Board < ApplicationRecord
+    
+has_many :lists, :class_name => "List", :foreign_key => "board_id"
+
+# foreign key is named after the parent / the single (for one to manies)
 end

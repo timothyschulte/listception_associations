@@ -5,16 +5,56 @@
 <div class="row">
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
-      <dt>Title</dt>
-      <dd><%= @list.title %></dd>
-
-      <dt>Board</dt>
-      <dd><%= @list.board_id %></dd>
-
-      <dt>Position order</dt>
-      <dd><%= @list.position_order %></dd>
-
+      <dt>Cards</dt>
+      <dd><% @list.cards.each do |card| %></dd>
+            <dt>Card Name</dt>
+            <dd><%= card.title %></dd>
+            
+            <dt>Tags</dt>
+            <dd><% card.tags.each do |tag| %></dd>
+            <dd><%= tag.name %></dd>
+            <% end %>
+            
+            <dt>Notes</dt>
+            <dd><% card.notes.each do |note| %></dd>
+            <dd><%= note.body %></dd>
+            <% end %>
+        <% end %>
     </dl>
+    
+    
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+    <h1>Create new card</h1>
+    <form action="/create_card" method="post">
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="card" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @card %>">
+      </div>
+      
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="card" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @card %>">
+      </div>
+      
+      <input type="hidden" name="list_id" value="<%= @list.id %>">
+      
+      <button class="btn btn-success">
+        Create Card
+      </button>
+    </form>
+  </div>
+</div>
 
     <div class="btn-group btn-group-justified">
       <a href="/lists" class="btn btn-default">

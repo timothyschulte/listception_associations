@@ -12,11 +12,14 @@
       <dd><%= @card.description %></dd>
 
       <dt>List</dt>
-      <dd><%= @card.list_id %></dd>
+      <dd><%= @card.list.title %></dd>
+      
+      <dt>Tag</dt>
+      <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+      
 
       <dt>Position order</dt>
       <dd><%= @card.position_order %></dd>
-
     </dl>
 
     <div class="btn-group btn-group-justified">
